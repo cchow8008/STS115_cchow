@@ -1,3 +1,5 @@
+#emf - good! I left a few comments below (can look for "emf”). Overall you do a great job answering each question and annotating the code! For future homeworks you can provide a translation for each line (specifically if it is something new/complicated) rather than (or addition to) a summary statement at the end.
+
 # This file contains homework questions for the lecture on 
 # Control Structures and Functions.  Questions appear as comments 
 # in the file.  Place your answers as executable code immediately 
