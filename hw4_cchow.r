@@ -88,6 +88,7 @@ saveRDS(dogs,"dogs_new.rds")
 dogs = readRDS('dogs.RDS')
 
 class(dogs)
+#dogs is a data frame, need to say it as RDS and then read it 
 #
 #     a. How many missing values are in the `height` column? 
 #       [code completion + comprehension]
@@ -97,6 +98,7 @@ nrow(dogs[is.na(dogs$height),])
 dim(dogs[is.na(dogs$height),])
 
 sum(is.na(dogs$height))
+#the amount of na's in height column in dogs, have to do order wise
 #
 #     b. Think of a strategy to check the number of missing values in every
 #        column using no more than 3 lines of code. Hint: think about last
