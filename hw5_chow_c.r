@@ -15,6 +15,8 @@
 # answer all of them. The majority of points lost in homework come from
 # careless skipping over question parts.  
 
+# emf - good job! you can find comments below by searching for "emf"
+
 ###############################################################################
 
 # 1. What is a Frequency Distribution? [comprehension]
@@ -35,6 +37,8 @@
 #In the case of Standard Deviation, it's the mean but for Deviation it can
 #just be any value in the data set. 
 
+# emf - mostly there - deviation in stats is still comparing points to some measure of central tendency
+
 # 4. What is Standard Deviation? [comprehension]
 
 #Standard Deviation is the average distance of a data point to the mean. 
@@ -51,6 +55,8 @@ nrow(craigslist)
 ncol(craigslist)
 
 #lists number of rows and columns (only number--not name)
+
+#emf - the dim function also works here
 
 #     b. The names of the columns. [code completion + comprehension]
 colnames(craigslist)
@@ -126,6 +132,8 @@ range(converted_time)
 #makes the format of the year-month, need as.Date to show if converted correctly
 #range shows from when to when, so shows January 2021 to March 2021
 
+# emf - good, however by using the"%Y-%m" format you are missing the date information
+
 # 8. Compute the mean price for each pets category. Based on the means, are
 #    apartments that allow pets typically more expensive? Explain, being
 #    careful to point out any subtleties in the result.
@@ -145,6 +153,9 @@ mean(dogs_pet$price, na.rm=TRUE)
 mean(none_pet$price, na.rm=TRUE)
 
 #correct but should try to use the apply function
+
+#emf - good - if you need to repeat a command, you can simplify with an apply function (as you say above):
+sapply(split(cl$price, cl$pets), mean, na.rm = TRUE)
 
 #Based on the means, we can't really assume that apartments that allow pets are
 #typically more expensive. No pets in apartments has a mean of $1740.128, but
@@ -190,6 +201,8 @@ z <-c(9,1,7)
 y <-c(4,2,6)
 z[order(y)]
 #z is what orders, look at the outside
+
+# emf - response is a bit unclear here - in this case, z is the vector that is being ordered by y
 
 dataframe <- data.frame(
   z=c("a", "c", "b"),
