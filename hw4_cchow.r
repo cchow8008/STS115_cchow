@@ -1,3 +1,5 @@
+# emf - good job! See comments/suggestions below by searching for "emf".
+
 # Directions:
 
 # This file contains homework questions for the lecture on working with files
@@ -49,6 +51,8 @@
 #One way you can do it is with to do it at beginning of code with 
 #session -> set working directory ->to source file location
 
+# emf - could be a little more specific than it makes it "difficult to understand" - for who?
+
 # 4. List one advantage and one disadvantage for each of these formats:
 # [comprehension]
 #   
@@ -84,6 +88,7 @@ list.files ("/Users/charlottechow/sts115_cchow/files_in_r/best_in_show")
 
 write.csv (dogs, "dogs_new.csv", row.names=FALSE)
 saveRDS(dogs,"dogs_new.rds")
+# emf - waht is the purpose of these lines of code? what are you trying?
 
 dogs = readRDS('dogs.RDS')
 
@@ -99,6 +104,7 @@ dim(dogs[is.na(dogs$height),])
 
 sum(is.na(dogs$height))
 #the amount of na's in height column in dogs, have to do order wise
+# emf - what do you mean by "order wise"?
 #
 #     b. Think of a strategy to check the number of missing values in every
 #        column using no more than 3 lines of code. Hint: think about last
@@ -113,6 +119,7 @@ for(i in 1:ncol(dogs)) {
   #for each column in the dogs dataframe from col 1 to total
   #columns
 #add i so it's each of the columsn to go through
+# emf - a bit unclear what you are saying in line 119
 
 #
 #     c. Which column has the most missing values? Try to solve this by
@@ -140,6 +147,8 @@ summary(dogs)
 #^These were my attempt codes for finding the max NA's, I ended up just using
 #summary since I had a hard time trying to get the correct output. 
 
+# emf - that perfectly fine! this is a tricky one to do with loops
+
 
 # 7. Use indexing to get the subset of the dogs data which only contains large
 #    dogs that are good with kids (the category `high` in the `kids` column
@@ -147,17 +156,18 @@ summary(dogs)
 
 ncol(dogs)
 head(dogs)
-subset_kidfriendly_largesize <- dogs[dogs$kids=="high" & dogs$size=="large", ]
-subset_kidfriendly_largesize
+subset_kidfriendly_largesize <- dogs[dogs$kids=="high" & dogs$size=="large", ] #emf - good - what's going in in this code?
+subset_kidfriendly_largesize 
 
 
 dogs[dogs$size=="large", ]
-dogs[dogs$kids=="high", ]
+dogs[dogs$kids=="high", ] #emf - what is your thought process heree?
 
 
 
 #need size and kids columns, easier to assign to object to give results
 #need the , to show which columns you want to look at
+# emf - a bit unclear what this annotation is referencing
 
 # 8. With the dogs data:
 #
@@ -179,6 +189,9 @@ is.na(dogs$grooming=="daily")
 #last code is the correct one
 #shows logcial vector of TRUE or FALSE
 
+#emf - your code in linr 185 checks if the element is NA - not if it is "daily" - can use the following:
+dogs$grooming=="daily"
+
 #
 #     b. Use the condition from part a to get the subset of all rows containing
 #        dogs that need daily grooming. How many rows are there?
@@ -198,6 +211,7 @@ daily_grooming
 table(dogs$grooming)
 #this table shows 23 for daily grooming, and I think the reason for this is
 #maybe because the NA's are still counted? 
+# emf - good!
 
 #
 #     d. Enclose the condition from part a in a call to the `which` function,
@@ -209,6 +223,8 @@ need_daily <- which (dogs$grooming=="daily")
 need_daily
 #There are now 23 rows which agrees with the count in part C (Rows 10,23,28,30,
 #32,38,44,46,60,61,62,64,66,67,70,71,75,79,80,86,95,113,114)
+
+# emf - is there a way to do this that does not require that you count each element by hand?
 
 # 9. Compute a table that shows the number of dogs in each grooming category
 #    versus size. Does it seem like size is related to how often dogs need to
@@ -239,7 +255,7 @@ terriers <- dogs[dogs$group=="terrier",]
 
 #Number of rows is 28
 #global environment shows 28 obvs of 18 variables
-
+# emf - good!
 
 #
 #     c. Computing the table is simpler (in terms of code) and provides more

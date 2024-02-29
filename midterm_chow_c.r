@@ -1,3 +1,6 @@
+# emf - great work! Good answers and documentation of your process. See
+# comments/suggestions below by searching for "emf".
+
 ################################################################
 # This file contains questions for the midterm exam for        #
 # IST008 Adventures in Data Science:  Social Science Edition,  #
@@ -78,7 +81,7 @@ length(question_4)
 #quotes make it seem like it's actual text (text strings), so it doesn't see
 #it as 4<5 and therefore can't say it's TRUE, since it sees it only as characters
 testttt <- c("four", "five")
-class(testttt)
+class(testttt) # emf - good exploration!
 
 # Question 6. Write a for loop that loops through each element in
 # the vector you created in your answer to Question 5 and prints
@@ -131,6 +134,8 @@ nrow(wine_revs)
 
 wine_prices <- data.frame(wine_revs$price)
 ncol(wine_prices)
+# emf - this returns a dataframe rather than a vector
+# can try wine_prices <- wine_revs$price
 
 # Question 12. Subset the "wine_revs" object to create a new 
 # data.frame named "wine_revs_truncated" that contains all 
@@ -219,6 +224,8 @@ library("fortunes")
 #from the mean of the set. It can show how dispersed the data can be toward, or
 #away the mean. Usually, there's a measure of being 3 Standard Deviation's 
 #away from the mean. 
+# emf - good answer! a bit unclear what you mean by this last point - does this mean that things
+# are usually 3 SD away from the mean? This is just semantics. What happens if something is over 3 SD?
 
 
 
