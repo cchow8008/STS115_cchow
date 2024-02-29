@@ -70,6 +70,9 @@ length(question_4)
 # that result: [Text Answer]
 
 "four"<"five"
+
+#alphabetically so goes by letters
+
 #The output is FALSE and I think it shows as False because R sees these as 
 #characters since they're in quotes and still typed out letters. The double
 #quotes make it seem like it's actual text (text strings), so it doesn't see
