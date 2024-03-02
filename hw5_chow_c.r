@@ -116,6 +116,8 @@ lapply(craigslist, count_na)
 #I used lapply since it applies the count_na function onto each element in the
 #craigslist list so it goes through all the columns
 
+# emf - needed to include result in your answer
+
 #    d. Which columns have 0 missing values? [comprehension]
 #Title, text, date_posted, deleted, laundry, parking, craigslist all have 0 
 #missing values
