@@ -1,3 +1,5 @@
+# emf - good job! you can find comments below by searching for "emf"
+
 # Directions:
 
 # This file contains homework questions for the lecture on data visualization.
@@ -99,6 +101,8 @@ ggplot(dogs)+
 #other. In identity, I think it's easier to look at the legend and correspond
 #the color to the stacked bars (and the legend of size also helps)  
 
+# emf - good discussion of reasoning!
+
 
 # 3.
 #   a. Which geometry function makes a histogram? Use the ggplot2 website or
@@ -126,6 +130,12 @@ ggplot(dogs)+
 ggplot(dogs)+
   aes(x=longevity)+
   geom_histogram(binwidth=30)
+# emf - incomplete - the question is asking you to use "bins" not "binwidth" - see below:
+
+ggplot(dogs)+
+  aes(x=longevity)+
+  geom_histogram(bins=30)
+
 #When making the binwidths larger, it makes the width of each bin larger.
 #Binwidth 30 makes it look like half of the chart is one giant rectangle. I 
 #think that increasing the number makes it more difficult to see which 
@@ -139,6 +149,8 @@ ggplot(dogs) +
   aes(x=height, y=weight, shape=group)+
   scale_shape_manual(values=c(0,1,2,3,4,5,6))+
   geom_point()
+ # emf - way to include the "working" dogs!
+
 #   b. Do height and weight effectively separate the different groups of dogs?
 #      In other words, are there clear boundaries between the groups in the
 #      plot (as opposed to being mixed together)? Are some groups better
@@ -202,7 +214,7 @@ ggplot(dogs) +
 #   b. Describe in a few sentences the "data story" you think that this visualization 
 #       is trying to tell.
 #I think the story that the visualization is trying to tell is the frequency
-#of shoe colors among a certain population. 
+#of shoe colors among a certain population. # emf - where do you get the differences among certain populations?
 
 #   c. In a paragraph, what makes this a "bad" visualization? Evaluate the visualization 
 #       based on the visualization principles and perception rules discussed in class 
@@ -213,6 +225,8 @@ ggplot(dogs) +
 #the colors that the creator use are contradictory. All the colors they used 
 #don't correspond to the color in the text, which can make it confusing to 
 #viewers if they are quickly glancing at only the graph bars. 
+
+# emf - good! this is a bar chart (not a histogram)
 
 #   d. Describe in 1-2 sentences one thing that this visualization actually already does well.
 #One thing is visualization does well at is the binwidth of the bars. I'm able
@@ -252,3 +266,4 @@ ggplot(dogs)+
   ylab("Lifetime Cost (in dollars)")+
   geom_point()
 
+#emf - great!
