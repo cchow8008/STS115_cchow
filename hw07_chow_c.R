@@ -1,3 +1,5 @@
+# emf - some issues with the loop towards the end but great documentation of your process and troubleshooting
+
 #scraping while moving through all pages in the Features section
 #working code that implements the "next" button process implemented in reader
 library(httr)
@@ -210,7 +212,7 @@ test #testing it works for last page too. It gives us 9 links since page 200
 #only has 9 articles and next_url returns as NA since there's no more pages
 #in Features left to scrape
 
-
+# emf - good testing of your function
 
 
 #Trying to get first 5 pages now: 
@@ -219,6 +221,7 @@ url_with_page <- paste(url,"page/",sep="") #using paste because I saw that on
 #the features page, the first page only has /features/ but pages 2,3,4,5 all have
 #features/page/number so I wanted to make sure that was going to happen with 
 #the pages that needed it
+# emf - a bit unclear how you are integrating the url_with_page code
 article_urls = list()
 i = 1
 
@@ -239,6 +242,35 @@ while (i < 6){ #using i <6 because it'll count i=0,1,2,3,4,5 which is the first
     print(url)
   }
  
+  
+  # emf - code below modified from course reader - your parse_article_links_corrected function works, but it seems like you are over complicating things in your loop above - a bit unclear why you are embedding an if else statement in your loop
+  
+  url = "https://theaggie.org/category/features/"
+  article_urls = list()
+  i = 1
+  
+  while (i < 6) {
+    # Download and parse the page.
+    page = read_html(url)
+    result = parse_article_links_corrected(page) # emf - using your function from above
+    
+    # Save the article URLs in the `article_urls` list. The variable `i` is the
+    # page number.
+    article_urls[[i]] = result$url
+    i = i + 1
+    
+    # Set the URL to the next URL.
+    url = result$next_url
+    
+    # Sleep for 1/30th of a second so that we never make more than 30 requests
+    # per second.
+    Sys.sleep(1/30)
+  }
+  
+  
+  
+  
+  
   # Download and parse the page.
   page = read_html(url)
   result = parse_article_links_corrected(page)
@@ -255,6 +287,9 @@ while (i < 6){ #using i <6 because it'll count i=0,1,2,3,4,5 which is the first
   #articles was "stuck" within those 5 "titles". Adding this allowed me to see
   #all 75 in the global environment (I used R Studiodocumentation.org to find/use
   #this function)
+  
+  # emf - the "next_url" is scraping the link to the next page found in the page navigation 
+  
   for(link in result$url) {
     article_urls <- append(article_urls, link)
   }
