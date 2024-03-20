@@ -1,3 +1,5 @@
+# emf - great! I left a few comments for you below
+
 # Directions:
 
 # This file contains homework questions for the lecture on data visualization.
@@ -83,16 +85,18 @@ cat(y)
 # "He wanted to say hello but was afraid".  Then use the stringr library to locate any 
 # occurences of the string "hello" in your vector.
 
-x <- c("He wanted to say hello but was afraid")
-str_detect(x)
-str_detect("He wanted to say hello but was afraid")
+x <- c("He wanted to say hello but was afraid") 
+str_detect(x) # the pattern that you are looking for should be "hello" so:
+      str_detect(x, "hello") # emf - need to use this format for most/all stringr functions
+str_detect("He wanted to say hello but was afraid") 
+      str_detect("He wanted to say hello but was afraid", "hello") 
 #^ my first attempts at using str_detect. It doesn't run through since it says
 #argument "pattern" is missing, since the entire sentence is in quotes. 
 #Realized I needed quotes around each word so it can detect how many and which
 #words are in the string. 
 
 str_detect(c("He", "wanted", "to", "say", "hello", "but", "was", "afraid"), "hello")
-#Runs fine now, and it says TRUE for when it gets to "hello"
+#Runs fine now, and it says TRUE for when it gets to "hello" # emf - right, becausse you specificed the pattern that you are interested in here 
 
 # Section "15.8 Corpus Analytics" of the reader contains a tutorial on performing
 # corpus analytics on a Document Term Matrix of 19th Century novels.  A Document Term
