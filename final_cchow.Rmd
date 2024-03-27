@@ -32,6 +32,8 @@ converted_time
 #was confused if this question was asking to convert the dates into different
 #format or not. Tried to change it with lubridate but kepe getting errors
 
+# emf - right, you needed to convert the strings above from "character" data into the "Date" data class - you are on the right track using lubridate however needed to use specific functions that match this occasion (same below - the pattern and replacement you have below were for a specific case where the dates were formatted as dd/mm/yyyy)
+
 str_replace_all(events, "(0[1-9]|[1-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/(\\d{4})",
                 "\\3-\\2-\\1")
 #Tried using the homework 8 code too but it just gave me the same output
@@ -94,6 +96,8 @@ resultt = str_replace(result, ".","")
 resultt
 #tried replacing all the periods with a space bar but it left me with only 1 variable
 #Tried doing just "." too but same result
+
+# emf - remember that str_split returns a list object, which you need to approach differently than if it was a dataframe or a single vector
 
 
 str_view(menu, "\.")
@@ -266,6 +270,8 @@ laureates_mess$Note <- mess
 #of parentheses, replace with a " " space so I could have been able to maybe
 #do str_replace afterwards to get rid of it entirely and then split the sectons
 #into names and notes.
+
+# emf - good!
 ```
 
 
